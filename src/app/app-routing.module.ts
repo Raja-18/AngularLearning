@@ -9,6 +9,7 @@ import { ErrorComponent } from './component/error/error.component';
 import { HelpComponent } from './component/help/help.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
+import { DemoRestComponent } from './component/rest/demo/demo.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,8 +17,9 @@ const routes: Routes = [
   { path: 'help', component: HelpComponent },
   { path: 'demo', component: DemoComponent, canActivate:[UserAuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'add/employee', component: AddEmployeeComponent },
-  { path: 'display/employee', component: DisplayEmployeeComponent },
+  { path: 'add-employee', component: AddEmployeeComponent },
+  { path: 'display-employee', component: DisplayEmployeeComponent },
+  { path: 'rest/demo', component: DemoRestComponent },
   { path: '**', component:  ErrorComponent}
   
 ];

@@ -1,26 +1,56 @@
-<p>add-employee works!</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3> Add new Employee :</h3>
+    </div>
+    <div class="panel-body">
+        <form ngNativeValidate class="form-horizontal">
 
-<h1> Add new Employee :</h1>
+            <div class="form-group">
+                <label for="empId" class="control-label col-sm-2">Employee Id:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" [(ngModel)] = "newEmployee.id" name="empId" pattern="^[0-9]{1,5}$" title="Min 1 and Max 5 digits expected for ID!" placeholder="Enter ID" required>
+                </div>
+            </div>
+             
+            <div class="form-group">
+                <label for="empName" class="control-label col-sm-2">Employee Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" [(ngModel)] = "newEmployee.name" name="empName" placeholder="Enter name">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="empSalary" class="control-label col-sm-2">Employee salary:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control"  [(ngModel)] = "newEmployee.salary" name="empSalary" placeholder="Enter salary">
+                </div>
+            </div>
+             
+            <div class="form-group">
+                <label for="empPassword" class="control-label col-sm-2">Employee password:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" [(ngModel)] = "newEmployee.password" name="empPassword" placeholder="Enter Password">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" (click)="addUser()" value ="Add">Add</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
 
-<table>
-    <tr>
-        <td>Employee Id:</td>
-        <td><input type="text" [(ngModel)] = "newEmployee.id" name="empId"></td>
-    </tr>
-    
-    <tr>
-        <td>Employee Name:</td>
-        <td><input type="text" [(ngModel)] = "newEmployee.name" name="empname"></td>
-    </tr>
-    
-    <tr>
-        <td>Employee salary:</td>
-        <td><input type="number" [(ngModel)] = "newEmployee.salary" name="empSalary"></td>
-    </tr>
-    
-    <tr>
-        <td>Employee password:</td>
-        <td><input type="password" [(ngModel)] = "newEmployee.password" name="empPassword"></td>
-    </tr>
-    <tr><input type="button" (click)="addUser()" value ="Add"></tr>
-</table>
+<div *ngIf="msg" class="alert alert-success">
+    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> Employee information added.
+</div>
+
+<div *ngIf="errorMsg" class="alert alert-danger">
+    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Failed!</strong> Employee information not added.
+</div>
+
+

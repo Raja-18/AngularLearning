@@ -1,17 +1,29 @@
-<p>display-employee works!</p>
+<h1 class="well">Employee List:</h1>
+<div class="container">
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>SALARY</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.salary}}</td>
+                <td><input type="button" class="btn btn-danger" (click)="deleteEmployee(emp.id)" value="Delete"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-<h1>Employee List:</h1>
+<div *ngIf="msg" class="alert alert-success">
+    <h1>{{msg}}</h1>
+</div>
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>salary</th>
-    </tr>
-<tr *ngFor="let emp of employees">
-    <td>{{emp.id}}</td>
-    <td>{{emp.name}}</td>
-    <td>{{emp.salary}}</td>
-</tr>
-
-</table>
+<div *ngIf="errorMsg" class="alert alert-danger">
+    <h1>{{errorMsg}}</h1>
+</div>

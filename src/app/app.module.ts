@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { EmployeeService } from './service/employee.service';
 import { AddEmployeeComponent } from './component/add-employee/add-employee.component';
 import { DisplayEmployeeComponent } from './component/display-employee/display-employee.component';
 import { ErrorComponent } from './component/error/error.component';
+import { DemoRestComponent } from './component/rest/demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { ErrorComponent } from './component/error/error.component';
     LoginComponent,
     AddEmployeeComponent,
     DisplayEmployeeComponent,
-    ErrorComponent
+    ErrorComponent,
+    DemoRestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [UserAuthGuard,EmployeeService],
   bootstrap: [AppComponent]

@@ -8,4 +8,5 @@ import { Product } from './entity/product';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
 }
